@@ -3,7 +3,7 @@
 ## Group members
 - Chen 👩‍🎓
 - Jayadev 👨‍🎓
-- An 👨‍🎓 
+- An 👨‍🎓
 
 ## 1. Overview of the project
 
@@ -73,7 +73,35 @@ RUN chmod +x /usr/local/bin/pal2nal.pl
 RUN pip install snakemake==4.2.0
 ```
 
+### 3.2 Approach-2: pull a pre-built image from DockerHub
+#### 3.2.1 findings
+- Pull a pre-built image is straightforward and make like easier.
+- For our own research, we definitely want to publish container on DockerHub.
+- A GitHub repository links should be provided on the DockerHub page. The repository should have Dockerfile and app script and data
+
+#### 3.2.2 work log
+- [x] go to the DockerHub repository, and pull the image
+```
+docker pull evolutionarygenomics/scalability_snakemake
+```
+- [x] check if the image has been built
+```
+docker images
+```
+- [x] run the image using `docker run` command.
+```
+docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
+```
+docker run document: https://docs.docker.com/engine/reference/commandline/run/ or `docker run --help`
+snakemake command document: https://snakemake.readthedocs.io/en/stable/executable.html
+
+## 4. Task-2: Run CWL and Debian on single node
+- Assume using same approaches as described in Task-1 should work.
+
+## 5. Task-3: Run snakemake on multiple nodes
+
 
 ## Questions & Answers
 - Where (embarrassing) parallel is happening?
+
 
